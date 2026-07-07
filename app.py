@@ -89,8 +89,8 @@ with tab2:
     show_forecast = not (groups or country or vert or subv)
     if show_forecast:
         c1, c2 = st.columns(2)
-        c1.metric("Forecast revenue (6 mo)", f"{fc.CA_prevu_EUR.sum()/1e6:.0f} M€")
-        c2.metric("Forecast parcels (6 mo)", f"{int(fc.Colis_prevu.sum()):,}".replace(',', ' '))
+        c1.metric("Forecast revenue (6 mo)", f"{fc.Revenue_forecast_EUR.sum()/1e6:.0f} M€")
+        c2.metric("Forecast parcels (6 mo)", f"{int(fc.Parcels_forecast.sum()):,}")
 
         ts = d.groupby('PERIOD')['TurnoverDomestic_EUR'].sum().reset_index()
         fig = go.Figure()
