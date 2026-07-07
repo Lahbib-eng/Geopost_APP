@@ -144,4 +144,5 @@ with tab4:
         net.add_edge(grp, r.CD_CUSTOMER)
     net.save_graph("graph.html")
     with open("graph.html", "r", encoding="utf-8") as f:
-        components.html(f.read(), height=470)
+        html = f.read()
+    components.html(html, height=500, scrolling=True)
