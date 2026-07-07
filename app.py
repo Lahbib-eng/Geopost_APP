@@ -95,7 +95,7 @@ with tab2:
         ts = d.groupby('PERIOD')['TurnoverDomestic_EUR'].sum().reset_index()
         fig = go.Figure()
         fig.add_trace(go.Scatter(x=ts.PERIOD, y=ts.TurnoverDomestic_EUR, name="History", line=dict(color=RED)))
-        fig.add_trace(go.Scatter(x=fc.PERIOD, y=fc.CA_prevu_EUR, name="Forecast", line=dict(color="#888", dash='dash')))
+        fig.add_trace(go.Scatter(x=fc.PERIOD, y=fc.Revenue_forecast_EUR, name="Forecast", ...))
         fig.update_layout(height=350, yaxis_title="Revenue (€)")
         st.plotly_chart(fig, use_container_width=True)
         st.caption("Aggregate-level forecast (seasonal Holt-Winters model, ~5% error).")
